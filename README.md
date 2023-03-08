@@ -25,7 +25,7 @@ create a config.json file on the project root folder.
 _JSON file contents_
 ```json
 {
-    "mixit_project_id": <project-id>,
+    "project_id": <project-id>,
     "PAT": "<gitlab-personal-access-token>"
 }
 ```

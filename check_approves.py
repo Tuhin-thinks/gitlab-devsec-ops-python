@@ -19,7 +19,7 @@ def find_issue_ids_from_desc(desc):
 def get_issues_from_ids(issue_id_list):
     issues = []
     for issue_id in issue_id_list:
-        issue = mixit_project.issues.get(issue_id)
+        issue = project_obj.issues.get(issue_id)
         issues.append(issue)
     return issues
 
@@ -40,18 +40,18 @@ PAT = config["PAT"]
 gl = gitlab.Gitlab(private_token=PAT)
 gl.auth()
 
-# load the mixit project
-mixit_project_id = config["mixit_project_id"]
-mixit_project = gl.projects.get(mixit_project_id)
+# load the project
+project_id = config["project_id"]
+project_obj = gl.projects.get(project_id)
 show_only_1_approval = True
 show_all = True
 show_drafts = False
 store_1_approval = True
 store = {}
 
-print("Project: %s" % mixit_project.name)
+print("Project: %s" % project_obj.name)
 
-all_user_mrs = mixit_project.mergerequests.list(
+all_user_mrs = project_obj.mergerequests.list(
     state="opened", order_by="updated_at", get_all=True
 )
 

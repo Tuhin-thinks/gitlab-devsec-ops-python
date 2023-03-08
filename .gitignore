@@ -1,0 +1,7 @@
+.vscode
+**__pycache__
+*.idea
+*.py[cod]
+
+# custom folders to ignore
+.dump

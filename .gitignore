@@ -5,3 +5,6 @@
 
 # custom folders to ignore
 .dump
+
+# config file
+config.json

@@ -14,11 +14,11 @@ PAT = config["PAT"]
 gl = gitlab.Gitlab(private_token=PAT)
 gl.auth()
 
-# load the mixit project
-mixit_project_id = config["mixit_project_id"]
-mixit_project = gl.projects.get(mixit_project_id)
+# load the project
+project_id = config["project_id"]
+project_obj = gl.projects.get(project_id)
 
-print("Project: %s" % mixit_project.name)
+print("Project: %s" % project_obj.name)
 
 # get all open issues created by the user
 user_name = sys.argv[1]
@@ -28,7 +28,7 @@ user = gl.users.list(username=user_name)[0]
 print(f"User: {user.name}")
 user_id = user.id
 
-assigned_issues = mixit_project.issues.list(
+assigned_issues = project_obj.issues.list(
     assignee_id=user_id, state="opened", get_all=True
 )
 

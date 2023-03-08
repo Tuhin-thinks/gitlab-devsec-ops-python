@@ -8,10 +8,14 @@ ___
 ### Python Packages
 ___
 **Gitlab** - https://python-gitlab.readthedocs.io/en/stable/
+\
+**colorama** - https://pypi.org/project/colorama/
+
 
 INSTALLATION
 ```
 pip install python-gitlab
+pip install colorama
 ```
 
 ### ⚠ Important: Config file
